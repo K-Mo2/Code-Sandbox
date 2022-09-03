@@ -1,33 +1,36 @@
 #include <iostream>
 #include <map>
+#include <vector>
 using namespace std;
 
-int when_is_saturday(string S);
+int main(){
+    
+    vector<string> ops = {"5", "6", "+", "9", "D", "3", "C"};
+    
+    int sum = 0;
 
-int when_is_saturday(string S) {
+    
 
-    map <string, int> week { {"Sunday", 1}, { "Monday", 2}, { "Tuesday", 3}, { "Wednesday", 4 }, { "Thursday", 5}, { "Friday", 6} };
+    vector<int> result;
 
-    if(week[S]){
+    for(int i = 0; i != ops.size(); ++i){
+        
+        if(ops[i] == "+"){
+            result.push_back(stoi(ops[i - 1]) + stoi(ops[i - 2]));
+        }
 
-        return abs(week[S] - 7);
-    } else {
-        return -1;
+        if(ops[i] == "D"){
+            result.push_back(stoi(ops[i - 1]) * 2);
+        }
+
+        
     }
 
-    };
-    
-int main(int argc, char **argv){
+    for(auto i: result){
+        sum+= i;
+    }
 
-    
-    
-    string S;
-
-    cin >> S;
-
-    cout << when_is_saturday(S);
-    
+    cout << sum << endl;
     return 0;
-    
 }
 
