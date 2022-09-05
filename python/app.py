@@ -1,35 +1,24 @@
-def check_word(word):
 
-    word_list = list(str(word))
+ops = ["5", "6", "+", "9", "D", "3", "C"]
 
-    while True:
+def operations(ops):
+    
+    result = []
+    Sum = 0
 
-        user_input = input("Guess Word: ")
+    for i in range(0, len(ops)):
 
-        input_list = list(user_input)
+        if ops[i] == "+":
+            result.append((int(ops[i - 1]) + int(ops[i - 2])))
 
-        answer_arr = ['_'] * len(word)
+        if ops[i] == "D":
+            result.append((int(ops[i - 1]) * 2))
 
-        supported_letters = []
-        
-        i = 0
-        
-        for l in range(min(len(word_list), len(input_list))):
-            if input_list[l] in word_list:
-                i = word_list.index(input_list[l], i)
-                answer_arr[i] = input_list[l]
-                supported_letters.append(input_list[l])
-            
-                
+        if ops[i] == "C":
+            result.append(0)
 
+    Sum = sum(result)
 
-        if answer_arr == word_list:
-            print(answer_arr)
-            print("Letters exist: ", supported_letters)
-            return print("You Win!")
-        else:
-            print(answer_arr)
-            print("Letters exist: ", supported_letters)
-            return print("You Lost!")
-            
-check_word("cheese")
+    return Sum
+
+print(operations(ops))
