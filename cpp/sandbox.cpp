@@ -3,13 +3,26 @@ using namespace std;
 
 int main(){
     
-    double pi = 3.141592653;
-    double r;
+int x, y, z, min, max;
+
+cin >> x >> y >> z;
+
+int arr[] = { x, y, z };
+int n = sizeof(arr) / sizeof(arr[0]);
+
+min = arr[0];
+max = arr[0];
+
+for(int i = 0; i < n; i++){
+    if(arr[i] < min){
+        min = arr[i];
+    } 
     
-    cin >> r;
+    if(arr[i] > max){
+        max = arr[i];
+    } 
+    
+}
 
-    double area = pi * (r * r);
-
-
-    cout << fixed << setprecision(9) << area << endl;
+    cout << min << " " << max << endl;
 } 
