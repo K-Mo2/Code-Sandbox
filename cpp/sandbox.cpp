@@ -2,27 +2,14 @@
 using namespace std;
 
 int main(){
-    
-int x, y, z, min, max;
+    string f_name1, l_name1, f_name2, l_name2;
 
-cin >> x >> y >> z;
+    cin >> f_name1 >> l_name1;
+    cin >> f_name2 >> l_name2;
 
-int arr[] = { x, y, z };
-int n = sizeof(arr) / sizeof(arr[0]);
-
-min = arr[0];
-max = arr[0];
-
-for(int i = 0; i < n; i++){
-    if(arr[i] < min){
-        min = arr[i];
-    } 
-    
-    if(arr[i] > max){
-        max = arr[i];
-    } 
-    
-}
-
-    cout << min << " " << max << endl;
+    if(l_name1 == l_name2){
+        cout << "ARE Brothers" << endl; 
+    } else {
+        cout << "NOT" << endl; 
+    }
 } 
