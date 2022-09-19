@@ -2,14 +2,23 @@
 using namespace std;
 
 int main(){
-    string f_name1, l_name1, f_name2, l_name2;
+    char x;
 
-    cin >> f_name1 >> l_name1;
-    cin >> f_name2 >> l_name2;
+    cin >> x;
 
-    if(l_name1 == l_name2){
-        cout << "ARE Brothers" << endl; 
-    } else {
-        cout << "NOT" << endl; 
+    if(x >= 48 && x <= 57){
+        cout << "IS DIGIT" << endl;
     }
+
+    if(x >= 65 && x <= 90){
+        cout << "ALPHA" << endl;
+        cout << "IS CAPITAL" << endl;
+    }
+
+    if(x >= 97 && x <= 122){
+        cout << "ALPHA" << endl;
+        cout << "IS SMALL" << endl;
+    }
+
+    
 } 
