@@ -6,18 +6,13 @@ int main(){
 
     cin >> x;
 
-    if(x >= 48 && x <= 57){
-        cout << "IS DIGIT" << endl;
-    }
-
     if(x >= 65 && x <= 90){
-        cout << "ALPHA" << endl;
-        cout << "IS CAPITAL" << endl;
+        cout << char(x + 32) << endl;
+        
     }
 
     if(x >= 97 && x <= 122){
-        cout << "ALPHA" << endl;
-        cout << "IS SMALL" << endl;
+        cout << char(x - 32) << endl;
     }
 
     
