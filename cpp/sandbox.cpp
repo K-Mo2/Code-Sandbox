@@ -3,26 +3,15 @@
 using namespace std;
 
 int main(){
-    
-    int x,y;
-    char op;
-    cin >> x >> op >> y;
 
-    if(op == '+'){
-        cout << (x + y) << endl;
+    string x;
+
+    cin >> x;
+
+    if(x[0] % 2 == 0){
+        cout << "EVEN" << endl;
+    } else {
+        cout << "ODD" << endl;
     }
-
-    if(op == '-'){
-        cout << (x - y) << endl;
-    }
-
-    if(op == '*'){
-        cout << (x * y) << endl;
-    }
-
-    if(op == '/'){
-        cout << x / y << endl;
-    }
-
     
 } 
