@@ -1,18 +1,27 @@
 #include <bits/stdc++.h>
+#include <string>
 using namespace std;
 
 int main(){
-    char x;
+    
+    int x,y;
+    char op;
+    cin >> x >> op >> y;
 
-    cin >> x;
-
-    if(x >= 65 && x <= 90){
-        cout << char(x + 32) << endl;
-        
+    if(op == '+'){
+        cout << (x + y) << endl;
     }
 
-    if(x >= 97 && x <= 122){
-        cout << char(x - 32) << endl;
+    if(op == '-'){
+        cout << (x - y) << endl;
+    }
+
+    if(op == '*'){
+        cout << (x * y) << endl;
+    }
+
+    if(op == '/'){
+        cout << x / y << endl;
     }
 
     
