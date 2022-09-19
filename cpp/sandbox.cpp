@@ -4,14 +4,16 @@ using namespace std;
 
 int main(){
 
-    string x;
+    float x, y;
 
-    cin >> x;
+    cin >> x >> y;
 
-    if(x[0] % 2 == 0){
-        cout << "EVEN" << endl;
-    } else {
-        cout << "ODD" << endl;
-    }
+    if(x > 0.0 && y > 0.0) cout << "Q1\n";
+    if(x < 0.0 && y > 0.0) cout << "Q2\n";
+    if(x < 0.0 && y < 0.0) cout << "Q3\n";
+    if(x > 0.0 && y < 0.0) cout << "Q4\n";
+    if(x == 0.0 && y == 0.0) cout << "Origem\n";
+    if(y == 0.0 && x != 0.0) cout << "Eixo X\n";
+    if(x == 0.0 && y != 0.0) cout << "Eixo Y\n";
     
 } 
