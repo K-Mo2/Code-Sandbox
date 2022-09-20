@@ -4,16 +4,27 @@ using namespace std;
 
 int main(){
 
-    double x;
+    int x, y, z;
 
-    cin >> x;
-    
-    if(x >= 0 && x <= 25) cout << "Interval [0,25]\n";
-    else if(x > 25 && x <= 50) cout << "Interval (25,50]\n";
-    else if(x > 50 && x <= 75) cout << "Interval (50,75]\n";
-    else if(x > 75 && x <= 100) cout << "Interval (75,100]\n";
-    else cout << "Out of Intervals\n";
-    
+    cin >> x >> y >> z;
 
+    int arr[3] = {x, y, z};
+    int arr_cpy[3];
+    copy(begin(arr), end(arr), begin(arr_cpy));
+    
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    sort(arr, arr + n);
+
+
+    for(int i = 0; i < n; i++){
+        cout << arr[i] << endl;
+    }
+
+    cout << endl;
+
+    for(int i = 0; i < n; i++){
+        cout << arr_cpy[i] << endl;
+    }
     
 } 
