@@ -4,20 +4,20 @@ using namespace std;
 
 int main(){
 
-    float decimal;
-    int integer;
-    float fraction;
+    int a,b;
+    char s;
 
-    cin >> decimal;
-    
-    integer = decimal;
+    cin >> a >> s >> b;
 
-    fraction = decimal - integer;
-
-    if(fraction == 0){
-        cout << "int " << integer << endl;
-    } else {
-        cout << "float " << integer << " " << fraction << endl;
+    if(s == '>'){
+        if(a > b) cout << "Right\n"; else cout << "Wrong\n";
     }
-    
+
+    if(s == '<'){
+        if(a < b) cout << "Right\n"; else cout << "Wrong\n";
+    }
+
+    if(s == '='){
+        if(a == b) cout << "Right\n"; else cout << "Wrong\n";
+    }
 } 
