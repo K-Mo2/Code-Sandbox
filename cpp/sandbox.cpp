@@ -4,22 +4,43 @@ using namespace std;
 
 int main(){
 
-    int a,b, c;
-    char s, q;
+    long long l1, r1, l2, r2;
 
-    cin >> a >> s >> b >> q >> c;
-    
-    if(q != '=') return 0;
-    
-    if(s == '+'){
-        if(a + b == c) cout << "Yes\n"; else cout << a + b << endl;
+    cin >> l1 >> r1 >> l2 >> r2;
+
+    if(l2 > r1 || r2 < l1){
+        cout << "-1\n";
+        return 0;
     }
 
-    if(s == '-'){
-        if(a - b == c) cout << "Yes\n"; else cout << a - b << endl;
-    }
+    if(l2 >= l1 && r2 <= r1){
+        cout << l2 << " " << r2; 
+        cout << endl;
+        return 0;
+    } 
 
-    if(s == '*'){
-        if(a * b == c) cout << "Yes\n"; else cout << a * b << endl;
-    }
+    if(l2 <= l1 && r2 >= r1){
+        cout << l1 << " " << r1; 
+        cout << endl;
+        return 0;
+    } 
+
+    if(l2 > l1 && r2 > r1){
+        cout << l2 << " " << r1; 
+        cout << endl;
+        return 0;
+    } 
+
+    if(l2 < l1 && r2 < r1){
+        cout << l1 << " " << r2; 
+        cout << endl;
+        return 0;
+    } 
+
+    if(l2 < l1 && r2 < r1){
+        cout << l1 << " " << r2; 
+        cout << endl;
+        return 0;
+    } 
+
 } 
