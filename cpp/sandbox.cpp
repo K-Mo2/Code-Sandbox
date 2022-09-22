@@ -4,43 +4,23 @@ using namespace std;
 
 int main(){
 
-    long long l1, r1, l2, r2;
+    long long a, b, c, d;
+    long long result;
+    int d1, d2;
+    cin >> a >> b >> c >> d;
 
-    cin >> l1 >> r1 >> l2 >> r2;
+    a = a % 1000;
+    b = b % 1000;
+    c = c % 1000;
+    d = d % 1000;
 
-    if(l2 > r1 || r2 < l1){
-        cout << "-1\n";
-        return 0;
-    }
-
-    if(l2 >= l1 && r2 <= r1){
-        cout << l2 << " " << r2; 
-        cout << endl;
-        return 0;
-    } 
-
-    if(l2 <= l1 && r2 >= r1){
-        cout << l1 << " " << r1; 
-        cout << endl;
-        return 0;
-    } 
-
-    if(l2 > l1 && r2 > r1){
-        cout << l2 << " " << r1; 
-        cout << endl;
-        return 0;
-    } 
-
-    if(l2 < l1 && r2 < r1){
-        cout << l1 << " " << r2; 
-        cout << endl;
-        return 0;
-    } 
-
-    if(l2 < l1 && r2 < r1){
-        cout << l1 << " " << r2; 
-        cout << endl;
-        return 0;
-    } 
-
+    result = (a * b *c *d);
+    // cout << result << endl;
+    d1 = result % 10;
+    result /= 10;
+    
+    d2 = result % 10;
+    
+    cout << d2 << d1 << endl;
+    
 } 
