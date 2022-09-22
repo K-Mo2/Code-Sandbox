@@ -3,24 +3,17 @@
 using namespace std;
 
 int main(){
+    double a, b, c, d;
 
-    long long a, b, c, d;
-    long long result;
-    int d1, d2;
     cin >> a >> b >> c >> d;
 
-    a = a % 1000;
-    b = b % 1000;
-    c = c % 1000;
-    d = d % 1000;
+    double result1 = (b * log10(a));
 
-    result = (a * b *c *d);
-    // cout << result << endl;
-    d1 = result % 10;
-    result /= 10;
+    double result2 = (d * log10(c));
     
-    d2 = result % 10;
-    
-    cout << d2 << d1 << endl;
-    
+    if(result1 > result2){
+        cout << "YES\n";
+    } else {
+        cout << "NO\n";
+    }
 } 
