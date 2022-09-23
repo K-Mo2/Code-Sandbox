@@ -4,12 +4,14 @@ using namespace std;
 
 int main(){
 
-    float x, p, t;
+    long long a, b, k;
 
-    cin >> x >> p;
+    cin >> a >> b >> k;
 
-    t = p / (1- (x / 100));
-
-    cout << fixed << setprecision(2) << t << endl;
+    if(a % k == 0 && b % k != 0) cout << "Memo\n";
+    else if(b % k == 0 && a % k != 0) cout << "Momo\n";
+    else if(a % k == 0 && b % k == 0) cout << "Both\n";
+    else if(a % k != 0 && b % k != 0) cout << "No One\n";
+    return 0;
 
 } 
