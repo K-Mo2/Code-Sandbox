@@ -3,17 +3,13 @@
 using namespace std;
 
 int main(){
-    double a, b, c, d;
 
-    cin >> a >> b >> c >> d;
+    float x, p, t;
 
-    double result1 = (b * log10(a));
+    cin >> x >> p;
 
-    double result2 = (d * log10(c));
-    
-    if(result1 > result2){
-        cout << "YES\n";
-    } else {
-        cout << "NO\n";
-    }
+    t = p / (1- (x / 100));
+
+    cout << fixed << setprecision(2) << t << endl;
+
 } 
