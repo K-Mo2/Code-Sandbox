@@ -1,17 +1,40 @@
-#include <bits/stdc++.h>
-#include <string>
-using namespace std;
+    #include <bits/stdc++.h>
+    #include <string>
+    using namespace std;
 
-int main(){
+    int main(){
 
-    char c;
+        long long a, b, c, d;
 
-    cin >> c;
+        cin >> a >> b >> c >> d;
 
-    if(c == 122){
-        cout << (char)(c - 25) << endl;
-    } else {
-        cout << (char)(c + 1) << endl;
-    }
 
-} 
+        if(a + b - c == d){
+            cout << "YES\n";
+        }
+
+
+        else if(a + (b * c) == d){
+            cout << "YES\n";
+        }
+
+        else if(a - b + c == d){
+            cout << "YES\n";
+        }
+
+        else if(a - (b * c) == d){
+            cout << "YES\n";
+        }
+
+        else if((a * b) + c == d){
+            cout << "YES\n";
+        }
+
+        else if((a * b) - c == d){
+            cout << "YES\n";
+        
+        } else {
+            cout << "NO\n";
+        }
+
+    } 
