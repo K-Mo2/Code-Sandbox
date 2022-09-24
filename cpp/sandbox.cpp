@@ -4,37 +4,10 @@
 
     int main(){
 
-        long long a, b, c, d;
+        int a, b;
 
-        cin >> a >> b >> c >> d;
+        cin >> a >> b;
 
-
-        if(a + b - c == d){
-            cout << "YES\n";
-        }
-
-
-        else if(a + (b * c) == d){
-            cout << "YES\n";
-        }
-
-        else if(a - b + c == d){
-            cout << "YES\n";
-        }
-
-        else if(a - (b * c) == d){
-            cout << "YES\n";
-        }
-
-        else if((a * b) + c == d){
-            cout << "YES\n";
-        }
-
-        else if((a * b) - c == d){
-            cout << "YES\n";
-        
-        } else {
-            cout << "NO\n";
-        }
-
+        if(abs(a - b) == 1 || (a - b == 0 && a != 0 && b != 0)) cout << "YES\n";
+        else cout << "NO\n";
     } 
