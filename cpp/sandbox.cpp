@@ -2,51 +2,23 @@
     using namespace std;
 
     int main(){
+
+        long long n, k, a;
         
-        long long n, m, k;
-        cin >> n >> m >> k;
+        cin >> n >> k >> a;
 
-        long long i = 0;
-        // cout << "n: " << n << " m: " << m << " k: " << k << endl;
+        long long nk_mod_a = (n * k) % a;
+        long long nk_by_a = (n * k) / a;
+        long long int_size = 2147483647;
 
-    if(m > 0 && n > 0 && k > 0 && n < m && n < k){
-        i += n;
-        m -= n;
-        k -= n;
-        n -= n;
-        // cout << "subtracted n\n";
-    } 
+        if(nk_mod_a != 0){
+            cout << "double\n";
 
-    if(m > 0 && n > 0 && k > 0 && m < n && m < k){
-        i += m;
-        n -= m;
-        k -= m;
-        m -= m;
-        // cout << "subtracted m\n";
-    } 
-
-    if(m > 0 && n > 0 && k > 0 && k < n && k < m){
-        i += k;
-        n -= k;
-        m -= k;
-        k -= k;
-        // cout << "subtracted k\n";
-    } 
-
-        // cout << "n: " << n << " m: " << m << " k: " << k << endl;
-    
-        if(m == 0 && (n / 2) > k){
-            i += k;
-            n -= k;
-            k -= k;
+        } else if(abs(nk_by_a) > int_size){
+            cout << "long long\n";
+        
+        } else {
+            cout << "int\n";
         }
-
-        if(m == 0 && (n / 2) < k){
-            i += n / 2;
-            k -= n / 2;
-            n -= n / 2;
-        }
-            
-        cout << i << endl;
         return 0;
     }
