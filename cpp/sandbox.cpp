@@ -3,22 +3,22 @@
 
     int main(){
 
-        long long n, k, a;
-        
-        cin >> n >> k >> a;
+        int n, d1, d2;
 
-        long long nk_mod_a = (n * k) % a;
-        long long nk_by_a = (n * k) / a;
-        long long int_size = 2147483647;
+        cin >> n;
 
-        if(nk_mod_a != 0){
-            cout << "double\n";
+        d1 = n % 10;
+        n /= 10;
 
-        } else if(abs(nk_by_a) > int_size){
-            cout << "long long\n";
-        
+        d2 = n % 10;
+        n /= 10;
+
+        if(d1 % d2 == 0){
+            cout << "YES\n";
+        } else if(d2 % d1 == 0){
+            cout << "YES\n";
         } else {
-            cout << "int\n";
+            cout << "NO\n";
         }
         return 0;
     }
