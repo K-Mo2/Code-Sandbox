@@ -2,20 +2,13 @@
     using namespace std;
 
     int main(){
-        int n, x, temp=0;
+
+        int n;
 
         cin >> n;
 
-        while(n){
-            
-            cin >> x;
-
-            if(x > temp){
-                temp = x;
-            }
-            n--;
+        for(int i = 1; i <= 12; i++){
+            cout << n << " * " << i << " = " << n * i << endl;            
         }
-
-        cout << temp << endl;        
         return 0;
     }
