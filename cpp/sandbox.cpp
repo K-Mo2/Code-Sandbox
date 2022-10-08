@@ -2,18 +2,20 @@
     using namespace std;
 
     int main(){
-        int x;
+        int n, x, temp=0;
 
-        while (true)
-        {
+        cin >> n;
+
+        while(n){
+            
             cin >> x;
-            if(x == 1999){
-                cout << "Correct\n";
-                return 0;
-            } else {
-                cout << "Wrong\n";
+
+            if(x > temp){
+                temp = x;
             }
+            n--;
         }
-        
+
+        cout << temp << endl;        
         return 0;
     }
