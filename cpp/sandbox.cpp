@@ -3,12 +3,25 @@
 
     int main(){
 
-        int n;
-
+        unsigned long long n, x=0, acc=0;
+        
         cin >> n;
 
-        for(int i = 1; i <= 12; i++){
-            cout << n << " * " << i << " = " << n * i << endl;            
+        unsigned long long arr[n] = { 0 };
+        
+        for(int i = 0; i < n; i++)
+        {   
+            cin >> x;
+        
+            acc = 1;
+            
+            for(int k = 0; k < x; k++){
+                acc *= (k + 1);
+            }
+
+            cout << acc << endl;
         }
+
+        
         return 0;
     }
