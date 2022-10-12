@@ -1,27 +1,22 @@
     #include <bits/stdc++.h>
     using namespace std;
 
+    bool isPrime(int n){
+        if(n <= 1) return false;
+
+        for(int i = 2; i < n; i++){
+            if(n % i == 0) return false;
+        }
+        return true;
+    }
+
     int main(){
 
-        unsigned long long n, x=0, acc=0;
+        int x;
         
-        cin >> n;
+        cin >> x;
 
-        unsigned long long arr[n] = { 0 };
-        
-        for(int i = 0; i < n; i++)
-        {   
-            cin >> x;
-        
-            acc = 1;
-            
-            for(int k = 0; k < x; k++){
-                acc *= (k + 1);
-            }
+        isPrime(x) ? cout << "YES\n" : cout << "NO\n";
 
-            cout << acc << endl;
-        }
-
-        
         return 0;
     }
