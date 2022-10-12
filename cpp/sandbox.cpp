@@ -33,6 +33,22 @@
 
     }
 
+    int reverse_num(int n){
+        int temp = 0, reverse = 0, len = 0;
+
+        len = num_len(n);
+
+        temp = n;
+
+        while(temp){
+            reverse += (temp % 10) * (int) pow(10, len - 1);
+            temp /= 10;
+            len--;
+        }
+
+        return reverse;
+    }
+
     int main(){
 
         int x, len;
@@ -41,6 +57,7 @@
 
         len = num_len(x);
 
+        cout << reverse_num(x) << endl;
         isPalindrome(x, len) ? cout << "YES\n" : cout << "NO\n";
 
         return 0;
