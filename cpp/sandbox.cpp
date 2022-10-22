@@ -134,9 +134,37 @@ using namespace std;
 
     }
 
+    void itIt001(){
+        int n,m;
+        string s;
+
+        cin >> n >> s >> m;
+
+        if(s == ">"){
+            n > m ? cout << "Right\n" : cout << "Wrong\n";
+        } 
+
+        if(s == "<"){
+            n < m ? cout << "Right\n" : cout << "Wrong\n";
+        } 
+
+        if(s == "="){
+            n == m ? cout << "Right\n" : cout << "Wrong\n";
+        } 
+    }
+
+    void stones(){
+        int n;
+
+        cin >> n;
+
+        n == 1 ? cout << 1 << endl : cout << 2 << endl; 
+        
+    }
+
     int main(){
         
-        wegz_help();
+        stones();
  
         return 0;
     }
