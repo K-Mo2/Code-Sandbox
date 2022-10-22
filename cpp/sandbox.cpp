@@ -179,9 +179,30 @@ using namespace std;
         cout << endl;
     }
 
+    void amazing_cave(){
+        int x;
+
+        cin >> x;
+
+        if(x % 10 == 4 || x % 10 == 7){
+            cout << "lucky";
+        } else {
+            cout << "unlucky";
+        }
+
+        cout << " ";
+
+        if(x % 2 == 0){
+            cout << "even";
+        } else {
+            cout << "odd";
+        }
+
+        cout << endl;
+    }
     int main(){
         
-        hazem_task();
+        amazing_cave();
  
         return 0;
     }
