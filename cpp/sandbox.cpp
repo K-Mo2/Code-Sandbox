@@ -170,9 +170,18 @@ using namespace std;
         cout << (n * (n + 1) / 2) << endl;
     }
 
+    void hazem_task(){
+        char l;
+
+        cin >> l;
+
+        l < 97 ? cout << char(l + 32) : cout << char(l - 32);
+        cout << endl;
+    }
+
     int main(){
         
-        kg2();
+        hazem_task();
  
         return 0;
     }
