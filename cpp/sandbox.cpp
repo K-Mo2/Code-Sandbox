@@ -162,9 +162,17 @@ using namespace std;
         
     }
 
+    void kg2(){
+        int n;
+
+        cin >> n;
+
+        cout << (n * (n + 1) / 2) << endl;
+    }
+
     int main(){
         
-        stones();
+        kg2();
  
         return 0;
     }
