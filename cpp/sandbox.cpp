@@ -200,9 +200,22 @@ using namespace std;
 
         cout << endl;
     }
+
+    void divisibleByX(){
+        long long a,b,x, res;
+
+        cin >> a >> b >> x;
+        
+        res = abs((a / x) - (b / x));
+
+        if(min(a,b) % x == 0) res++; 
+
+        cout << res << endl;
+    }
+
     int main(){
         
-        amazing_cave();
- 
+        divisibleByX();
+
         return 0;
     }
