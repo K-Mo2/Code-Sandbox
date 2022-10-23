@@ -213,9 +213,45 @@ using namespace std;
         cout << res << endl;
     }
 
+    long long distance(long long x1, long long y1, long long x2, long long y2){
+        long long res = 0;
+
+        return res = pow((x1 - x2), 2) + pow((y1 - y2), 2);
+    }
+
+    void the_maze(){
+        long long xi, yi, x1, y1, x2, y2, x3, y3, res1, res2, res3;
+
+        cin >> xi >> yi;
+
+        cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+
+        res1 = distance(xi, yi, x1, y1);
+        
+        res2 = distance(xi, yi, x2, y2);
+        
+        res3 = distance(xi, yi, x3, y3);
+
+        if(res1 < res2 && res1 < res3){
+            cout << res1 << endl;
+            cout << x1 << " " << y1 << endl;
+        }
+        
+        if(res2 < res1 && res2 < res3){
+            cout << res2 << endl;
+            cout << x2 << " " << y2 << endl;
+        }
+        
+        if(res3 < res1 && res3 < res2){
+            cout << res3 << endl;
+            cout << x3 << " " << y3 << endl;
+        }
+
+    }
+
     int main(){
         
-        divisibleByX();
+        the_maze();
 
         return 0;
     }
