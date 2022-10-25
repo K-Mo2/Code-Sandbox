@@ -302,9 +302,28 @@ using namespace std;
 
     }
 
-    int main(){
+    void divisors(){
+        int n;
+
+        cin >> n;
+
+        if(isPrime(n)){
+            cout << "1\n" << n << endl;
         
-        chicken_wings();
+        } else {
+
+            for(int i = 1; i <= n; i++){
+                if(n % i == 0){
+                    cout << i << endl;
+                }
+            }
+        }
+
+    }
+
+    int main(){
+
+        divisors();
 
         return 0;
     }
