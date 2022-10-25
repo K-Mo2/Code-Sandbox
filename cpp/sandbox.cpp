@@ -273,9 +273,38 @@ using namespace std;
         }
     }
 
+    bool isPrime(long long n){
+        
+        if(n == 1) return false;
+
+        for(int i = 2; i*i <= n; i++){
+            if(n % i == 0) return false;
+        }
+
+        return true;
+    }
+
+    void chicken_wings(){
+        long long x, y;
+        int price = 0;
+        int sum = 0;
+
+        cin >> x >> y;
+
+        for(int i = x; i <= y; i++ ){
+            if(isPrime(i)){
+                price++;
+                sum += i;
+            }
+        }
+
+        cout << sum << " " << price << endl;
+
+    }
+
     int main(){
         
-        chess_master();
+        chicken_wings();
 
         return 0;
     }
