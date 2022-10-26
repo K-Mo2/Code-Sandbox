@@ -324,6 +324,6 @@ using namespace std;
     int main(){
 
         divisors();
-
+    
         return 0;
     }
