@@ -344,9 +344,16 @@ using namespace std;
 
     }
 
-    int main(){
+    int euclidean_gcd(int a, int b){
+        return b == 0 ? a : euclidean_gcd(b, a % b);
+    }
 
-        GCD();
+    int main(){
+        int a, b;
+
+        cin >> a >> b;
+
+        cout << euclidean_gcd(a, b) << endl;
     
         return 0;
     }
