@@ -321,9 +321,32 @@ using namespace std;
 
     }
 
+    void GCD(){
+        int a, b;
+
+        cin >> a >> b;
+
+        if(a < b){
+            for(int i = a; i > 0; i--){
+                if(a % i == 0 && b % i == 0){
+                    cout << i << endl;
+                    return;
+                }
+            }
+        } else {
+            for(int i = b; i > 0; i--){
+                if(a % i == 0 && b % i == 0){
+                    cout << i << endl;
+                    return;
+                }
+            }
+        }
+
+    }
+
     int main(){
 
-        divisors();
+        GCD();
     
         return 0;
     }
