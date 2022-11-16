@@ -348,12 +348,35 @@ using namespace std;
         return b == 0 ? a : euclidean_gcd(b, a % b);
     }
 
+    bool isLucky(int x){
+        for(int i = x; i > 0; i /= 10){
+            if((i % 10) != 4 && (i % 10) != 7) return false;
+        }
+
+        return true;
+    }
+
+    void lucky_numbers(){
+       int a, b, i;
+       bool lucky_numbers_exist = false;
+
+       cin >> a >> b;
+       i = a;
+       while(i <= b){
+        if(isLucky(i)){
+            lucky_numbers_exist = true;
+            cout << i << " ";
+        }
+        i++;
+       }
+
+       if(!lucky_numbers_exist) cout << "-1\n";
+       else cout << endl;
+    }
+
     int main(){
-        int a, b;
+        
+        lucky_numbers();
 
-        cin >> a >> b;
-
-        cout << euclidean_gcd(a, b) << endl;
-    
         return 0;
     }
