@@ -367,7 +367,11 @@ using namespace std;
             lucky_numbers_exist = true;
             cout << i << " ";
         }
-        i++;
+        
+        if(i % 10 == 4) i += 3;
+        else if (i % 10 == 7) i += 7;
+        else i++;
+       
        }
 
        if(!lucky_numbers_exist) cout << "-1\n";
