@@ -378,9 +378,35 @@ using namespace std;
        else cout << endl;
     }
 
+    int numbers_histogram(){
+        char s;
+        int n;
+
+        cin >> s >> n;
+        
+        int x[n];
+
+        for(int i = 0; i < n; i++){
+            
+            cin >> x[i];
+        }
+
+        for(int i = 0; i < n; i++){
+            
+            for(int j = 0; j < x[i]; j++){
+                
+                cout << s;
+            }
+
+            cout << endl;
+        }
+        
+        return 0;
+    }
+
     int main(){
         
-        lucky_numbers();
+        numbers_histogram();
 
         return 0;
     }
