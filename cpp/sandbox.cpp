@@ -430,9 +430,35 @@ using namespace std;
         }
     }
     
+    void digits(){
+        int n;
+
+        cin >> n;
+
+        int x[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            cin >> x[i];
+        }
+        
+        for (int i = 0; i < n; i++)
+        {
+            if(x[i] == 0) cout << 0;
+            
+            while(x[i]){
+                cout << x[i] % 10 << " ";
+                x[i] /= 10;
+            }
+
+            cout << endl;
+        }
+
+    }
+
     int main(){
         
-        shape1();
+        digits();
 
         return 0;
     }
