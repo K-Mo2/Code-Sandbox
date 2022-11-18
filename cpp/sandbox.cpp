@@ -416,9 +416,23 @@ using namespace std;
             cout << endl;
         }
     }
+
+    void shape1(){
+        int n;
+
+        cin >> n;
+
+        for(int i = n; i > 0; i--){
+            for(int j = i; j > 0; j--){
+                cout << "*";
+            }
+            cout << endl;
+        }
+    }
+    
     int main(){
         
-        pyramid();
+        shape1();
 
         return 0;
     }
