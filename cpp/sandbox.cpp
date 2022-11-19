@@ -456,9 +456,33 @@ using namespace std;
 
     }
 
+    void sequence_sum(){
+        int n, m;
+
+        do {
+            int acc = 0;
+            cin >> n >> m;
+            if(n <= 0 || m <= 0) break;
+            if(n > m){
+                for(int k = m; k <= n; k++){
+                cout << k << " ";
+                acc += k;
+            }
+            cout << "sum =" << acc << endl;
+            } else {
+                for(int k = n; k <= m; k++){
+                cout << k << " ";
+                acc += k;
+            }
+            cout << "sum =" << acc << endl;
+            } 
+        } while(n > 0 && m > 0);
+
+    }
+
     int main(){
         
-        digits();
+        sequence_sum();
 
         return 0;
     }
