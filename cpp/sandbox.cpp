@@ -499,9 +499,31 @@ using namespace std;
         }
     }
 
+    void three_nums(){
+     int k, s, counter = 0;
+
+     cin >> k >> s;
+
+    if(k > s) k = s;
+    
+    for (int i = 0; i <= k; i++)
+    {
+        for (int j = 0; j <= k; j++)
+        {
+            if((i + j) > s) break;
+            if(s - (i + j) <= k) counter++;
+            
+        }
+        
+    }
+    
+    cout << counter << endl;
+
+    }
+
     int main(){
         
-        sum_of_odd_nums();
+        three_nums();
 
         return 0;
     }
