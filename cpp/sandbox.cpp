@@ -537,6 +537,29 @@ using namespace std;
             cout << endl;
     }
 
+    void missing_number(){
+        int n, temp, i;
+
+        cin >> n;
+        int arr[n] = { 0 };
+        i = n - 1;
+        while(i){
+            cin >> temp;
+            arr[temp - 1]++;
+            i--;
+        }
+        
+        for (int i = 0; i < n; i++)
+        {
+            // cout << arr[i] << endl;
+            if(arr[i] == 0){
+                cout << (i + 1) << endl;
+            }
+        }
+        
+    }
+
+  
     int main(){
         
         repetition();
