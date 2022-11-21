@@ -591,9 +591,11 @@ using namespace std;
 
         for (int i = 0; i < n - 1; i++)
         {
-            while(arr[i] > arr[i+1]){
-                arr[i+1]++;
-                counter++;
+            if(arr[i] > arr[i+1]){
+                int diff = 0;
+                diff = arr[i] - arr[i+1];
+                arr[i+1] += diff;
+                counter += diff;
             }
                         
         }
