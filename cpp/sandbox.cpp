@@ -603,9 +603,44 @@ using namespace std;
         cout << counter << endl;
     }
 
+    void permutations(){
+        int n;
+
+        cin >> n;
+
+        int arr[n];
+
+        if(n == 1){
+            cout << 1;
+            return;
+        }
+
+        if(n <= 3){
+            cout << "NO SOLUTION\n";
+            return;
+        }
+
+        for (int i = 1; i <= n; i++)
+        {
+             arr[i] = i;
+        }
+
+        for (int i = 2; i <= n; i+=2)
+        {
+            cout << i << " ";
+        }
+
+        for (int i = 1; i <= n; i+=2)
+        {
+            cout << i << " ";
+        }
+        
+        cout << endl;
+    }
+
     int main(){
         
-        increasing_arr();
+        permutations();
 
         return 0;
     }
