@@ -577,9 +577,33 @@ using namespace std;
         cout << counter << endl;
     }
 
+    void increasing_arr(){
+        long long n, counter=0;
+
+        cin >> n;
+        
+        long long arr[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            cin >> arr[i];
+        }
+
+        for (int i = 0; i < n - 1; i++)
+        {
+            while(arr[i] > arr[i+1]){
+                arr[i+1]++;
+                counter++;
+            }
+                        
+        }
+                
+        cout << counter << endl;
+    }
+
     int main(){
         
-        repetitions();
+        increasing_arr();
 
         return 0;
     }
