@@ -559,10 +559,27 @@ using namespace std;
         
     }
 
-  
+    void repetitions(){
+        string s;
+        int counter=0, temp=1;
+        cin >> s;
+
+        int n = s.length();
+        
+        for (int i = 0; i < n; i++)
+        {   
+             if(s[i] == s[i+1]) temp++;
+             if(temp > counter) counter = temp;
+             if(s[i] != s[i+1]) temp = 1;
+
+        }
+
+        cout << counter << endl;
+    }
+
     int main(){
         
-        repetition();
+        repetitions();
 
         return 0;
     }
