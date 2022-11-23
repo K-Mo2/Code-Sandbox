@@ -638,9 +638,36 @@ using namespace std;
         cout << endl;
     }
 
+    void palindrome_array(){
+        int n;
+        bool palindrome = true;
+
+        cin >> n;
+
+        long long arr[n];
+        
+        int i = 0;
+        
+        while(i < n){
+            cin >> arr[i];
+            i++;
+        }
+
+        for (int j = 0; j < ceil(n/2); j++)
+        {
+            if(arr[j] != arr[(n-1)-j]) palindrome = false;
+        }
+        
+        if(palindrome){
+            cout << "YES\n";
+        } else {
+            cout << "NO\n";
+        }
+    }
+
     int main(){
         
-        permutations();
+        palindrome_array();
 
         return 0;
     }
