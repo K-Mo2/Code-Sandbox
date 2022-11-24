@@ -665,9 +665,44 @@ using namespace std;
         }
     }
 
+    void smallest_pair(){
+        int t;
+
+        cin >> t;
+
+        while(t){
+            long long smallest = pow(10, 9);
+            int n, i=0;
+            cin >> n;
+            long long arr[n];
+            
+            while (i < n)
+            {
+                cin >> arr[i];
+                i++;
+            }
+            
+            for(long long i = 0; i < n - 1; i++)
+            {
+                for (long long j = i + 1; j < n ; j++)
+                {   
+                    if((arr[i] + arr[j] + j - i) < smallest){
+                        smallest = arr[i] + arr[j] + j - i;
+                    }
+                }
+                
+            }
+            
+            cout << smallest << endl;    
+            
+            t--;
+        }
+
+    }
+
     int main(){
         
-        palindrome_array();
+        smallest_pair();
 
         return 0;
     }
