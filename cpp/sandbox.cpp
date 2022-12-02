@@ -763,9 +763,44 @@ using namespace std;
         
     }
 
+    void minimize_number(){
+        unsigned int n, a, ops_num=0;
+        bool isEven = true;
+
+        cin >> n;
+
+        unsigned int arr[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            cin >> arr[i];
+        }
+
+    ops:
+        for (int j = 0; j < n; j++)
+        {
+            if(arr[j] % 2 != 0){
+                isEven = false;
+                break;
+            } else {
+                arr[j] /= 2;
+            }
+
+        }
+
+        if(isEven){
+            ops_num++;
+            goto ops;
+        }
+
+        cout << ops_num << endl;
+        
+        
+    }
+
     int main(){
         
-        check_code();
+        minimize_number();
 
         return 0;
     }
