@@ -700,9 +700,49 @@ using namespace std;
 
     }
 
+    void max_sub_arrays(){
+        int t;
+
+        cin >> t;
+    
+        while(t){
+            int n;
+
+            cin >> n;
+
+            long long arr[n];
+            int i=0;
+
+            while (i < n)
+            {
+                cin >> arr[i];
+                i++;
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = i; j < n; j++)
+                {   
+                    long long max= -pow(10, 9);
+
+                    for (int k = i; k <= j; k++)
+                    {
+                        if(arr[k] > max) max = arr[k];
+                    }
+
+                    cout << max << " ";
+                }
+
+            }
+
+            cout << endl;
+            t--;
+        }
+    }
+
     int main(){
         
-        smallest_pair();
+        max_sub_arrays();
 
         return 0;
     }
