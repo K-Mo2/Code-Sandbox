@@ -740,9 +740,32 @@ using namespace std;
         }
     }
 
+    void check_code(){
+        int a,b;
+        string s;
+        bool isValid = true;
+
+        cin >> a >> b >> s;
+
+        if(s[a] != '-') isValid = false;
+
+        for (int i = 0; i < s.length(); i++)
+        {
+            if(i != a && (s[i] < '0' || s[i] > '9')){
+                isValid = false;
+            }
+        }
+
+        if(s.length() != (a + b + 1)) isValid = false;
+        
+        isValid ? cout << "Yes\n" : cout << "No\n";
+
+        
+    }
+
     int main(){
         
-        max_sub_arrays();
+        check_code();
 
         return 0;
     }
