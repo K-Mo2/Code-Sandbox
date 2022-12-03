@@ -798,9 +798,46 @@ using namespace std;
         
     }
 
+    void count_sub_arrays(){
+        int t, n;
+        
+        cin >> t;
+
+
+        while(t){
+            int counter=0;
+            cin >> n;
+
+            int arr[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                cin >> arr[i];
+            }
+            
+            for (int j = 0; j < n; j++)
+            {
+                for (int k = 0; k < n; k++)
+                {
+                    for (int l = j; l <= k; l++)
+                    {   
+                        if(arr[l] > arr[l+1] && l < k) break;
+                        if(l == k) counter++;
+                    }
+                    
+                }
+                
+            }
+            
+            cout << counter << endl;
+            t--;            
+        }
+
+    }
+
     int main(){
         
-        minimize_number();
+        count_sub_arrays();
 
         return 0;
     }
