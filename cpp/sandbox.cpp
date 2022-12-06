@@ -906,11 +906,34 @@ using namespace std;
         (sI == m) ? cout << "YES\n" : cout << "NO\n";
         
     }
+
+    void frequency_array(){
+        int n, m;
+
+        cin >> n >> m;
+
+        int arr[n], freqArr[m+1] = { 0 };
     
+        for (int i = 0; i < n; i++)
+        {
+            cin >> arr[i];
+
+            if(arr[i] <= m){
+                freqArr[arr[i]]++;
+            }
+        }
+
+        for (int i = 1; i <= m; i++)
+        {   
+            cout << freqArr[i] << endl;
+        }
+        
+        
+    }
     
     int main(){
         
-        is_b_sequence_of_a();
+        frequency_array();
 
         return 0;
     }
