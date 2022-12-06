@@ -956,10 +956,52 @@ using namespace std;
             cout << endl;
         }
     }
+
+    void eight_neighors(){
+        int n, m, x, y;
+        bool isValid = true;
+
+        cin >> n >> m;
+
+        char arr[n][m];
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                cin >> arr[i][j];
+            }
+            
+        }
+        
+        cin >> x >> y;
+        
+        x--;
+        y--;
+
+        int x1, y1, x2, y2;
+
+        x1 = (x - 1) < 0 ? 0 : (x - 1);
+        y1 = (y - 1) < 0 ? 0 : (y - 1);
+        
+        x2 = x + 1;
+        y2 = y + 1;
+        
+        for (int i = x1; i <= x2 && i < n; i++)
+        {
+            for (int j = y1; j <= y2 && j < m; j++)
+            {
+                if((i != x || j != y) && arr[i][j] != 'x') isValid = false; 
+                
+            }
+        }
+        
+        isValid ? cout << "yes\n" : cout << "no\n";
+    }
     
     int main(){
         
-        mirror_array();
+        eight_neighors();
 
         return 0;
     }
