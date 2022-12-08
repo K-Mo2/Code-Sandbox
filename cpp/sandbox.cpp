@@ -999,9 +999,89 @@ using namespace std;
         isValid ? cout << "yes\n" : cout << "no\n";
     }
     
+    void range_sum_query(){
+        unsigned int n, q, l, r;
+
+        cin >> n >> q;
+
+        unsigned int arr[n];
+        long long sum_arr[n] = { 0 };
+
+        for (int i = 0; i < n; i++)
+        {
+            cin >> arr[i];
+        }
+        
+        for (int i = 0; i < n; i++)
+        {
+            if(i == 0){
+                sum_arr[i] = arr[i];
+            } else {
+                sum_arr[i] = sum_arr[i-1] + arr[i];
+            }
+        }
+        
+        for (int j = 0; j < q; j++)
+        {
+            cin >> l >> r;
+            l--;
+            r--;
+        
+            long long sum=0;
+            
+            if(l > 0){
+                sum = sum_arr[r] - sum_arr[l-1];    
+            } else {
+                sum = sum_arr[r];    
+            }
+
+            cout << sum << endl;   
+        }
+        
+        
+    }
+
+    long long binary_search_algo(long long arr[], long long x, long long low, long long high ){
+        
+        while(low <= high){
+
+            long long mid = low + (high - low) / 2;
+
+            if(arr[mid] == x) return mid;
+            else if(x > arr[mid]) low = mid + 1;
+            else if(x < arr[mid]) high = mid - 1;
+        }
+        return -1;
+    }
+
+    void binary_search(){
+        int n, q;
+
+        cin >> n >> q;
+
+        long long arr[n];
+
+        for (int i = 0; i < n; i++)
+        {   
+            cin >> arr[i];
+        }
+
+        sort(arr, arr + n);
+        
+        for (int i = 0; i < q; i++)
+        {
+            long long x;
+            cin >> x;
+
+            // cout << binary_search_algo(arr, x, 0, n-1) << endl;
+            (binary_search_algo(arr, x, 0, n-1) != -1) ? cout << "found\n" : cout << "not found\n";
+        }
+        
+    }
+    
     int main(){
         
-        eight_neighors();
+        binary_search();
 
         return 0;
     }
