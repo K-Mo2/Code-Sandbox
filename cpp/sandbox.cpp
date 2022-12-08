@@ -1041,15 +1041,15 @@ using namespace std;
         
     }
 
-    long long binary_search_algo(long long arr[], long long x, long long low, long long high ){
+    
+    long long binary_search_algorithm(long long arr[], long long x, long long low, long long high ){
         
         while(low <= high){
-
-            long long mid = low + (high - low) / 2;
+            long long mid = low + (high - low);
 
             if(arr[mid] == x) return mid;
-            else if(x > arr[mid]) low = mid + 1;
-            else if(x < arr[mid]) high = mid - 1;
+            else if(arr[mid] > x) high = mid - 1;
+            else if(arr[mid] < x) low = mid + 1;
         }
         return -1;
     }
@@ -1074,7 +1074,7 @@ using namespace std;
             cin >> x;
 
             // cout << binary_search_algo(arr, x, 0, n-1) << endl;
-            (binary_search_algo(arr, x, 0, n-1) != -1) ? cout << "found\n" : cout << "not found\n";
+            (binary_search_algorithm(arr, x, 0, n-1) != -1) ? cout << "found\n" : cout << "not found\n";
         }
         
     }
