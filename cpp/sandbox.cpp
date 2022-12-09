@@ -1095,10 +1095,32 @@ using namespace std;
         cout << s << " " << t << endl;
         
     }
+
+    void conversion(){
+        string s;
+
+        cin >> s;
+        int n = s.length();
+
+        for (int i = 0; i < n; i++)
+        {
+            if(s[i] >= 65 && s[i] <= 90) s[i] += 32;
+            else if(s[i] >= 97 && s[i] <= 122) s[i] -= 32;
+            else if(s[i] == 44) s[i] -= 12;
+        }
+        
+        for (int i = 0; i < n; i++)
+        {
+            cout << s[i];
+        }
+
+        cout << endl;
+        
+    }
     
     int main(){
         
-        create_new_string();
+        conversion();
 
         return 0;
     }
