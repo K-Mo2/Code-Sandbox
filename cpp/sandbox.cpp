@@ -1084,7 +1084,14 @@ using namespace std;
 
         cin >> s >> t;
 
-        cout << s.length() << " " << t.length() << endl;
+        int i;
+        for ( i = 0; s[i] != '\0'; i++)
+        ;
+        
+        int j;
+        for ( j = 0; t[j] != '\0'; j++)
+        ;
+        cout << i << " " << j << endl;
         cout << s << " " << t << endl;
         
     }
