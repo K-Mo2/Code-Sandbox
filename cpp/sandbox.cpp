@@ -1078,10 +1078,20 @@ using namespace std;
         }
         
     }
+
+    void create_new_string(){
+        string s, t;
+
+        cin >> s >> t;
+
+        cout << s.length() << " " << t.length() << endl;
+        cout << s << " " << t << endl;
+        
+    }
     
     int main(){
         
-        binary_search();
+        create_new_string();
 
         return 0;
     }
