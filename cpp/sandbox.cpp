@@ -1242,9 +1242,32 @@ using namespace std;
         
     }
 
+    void count_words(){
+        string s;
+        int counter = 0;
+        
+        getline(cin, s);
+
+        int n = s.length();
+
+        for (int i = 0; i < n-1; i++)
+        {   
+            if(((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')) && ((s[i+1] == '.') || (s[i+1] == '?') || (s[i+1] == '!') || (s[i+1] == ' ') || (s[i+1] == ','))){
+                counter++;
+            }            
+        }
+
+        if(((s[n-1] >= 'a' && s[n-1] <= 'z') || (s[n-1] >= 'A' && s[n-1] <= 'Z'))){
+                counter++;
+        }
+
+        cout << counter << endl;
+        
+    }
+
     int main(){
         
-        sort_string();
+        count_words();
 
         return 0;
     }
