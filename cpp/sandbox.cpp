@@ -1201,9 +1201,50 @@ using namespace std;
         
     }
 
+    void max_subsequence(){
+        int n, counter=0;
+        string s;
+
+        cin >> n >> s;
+
+        for (int i = 0; i < n-1; i++)
+        {
+            if(s[i] != s[i+1]) counter++;
+        }
+
+        cout << (counter + 1) << endl;
+            
+    }
+
+    void sort_string(){
+        unsigned int n;
+        int s[26] = { 0 };
+
+        cin >> n;
+
+        for (int i = 0; i < n; i++)
+        {
+            char c;
+            cin >> c;
+            s[c-97]++;            
+        }
+
+        for (int j = 0; j < 26; j++)
+        {   
+            for (int k = 0; k < s[j]; k++)
+            {
+                cout << ((char)(j+97));
+            }
+            
+        }
+
+        cout << endl;
+        
+    }
+
     int main(){
         
-        subsequence_string();
+        sort_string();
 
         return 0;
     }
