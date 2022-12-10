@@ -1185,9 +1185,25 @@ using namespace std;
 
     }
     
+    void subsequence_string(){
+        string s, x = "hello";
+
+        cin >> s;
+
+        int j = 0;
+
+        for (int i = 0; i < s.length(); i++)
+        {
+            if(s[i] == x[j]) j++;
+        }
+
+        j > 4 ? cout << "YES\n" : cout << "NO\n";
+        
+    }
+
     int main(){
         
-        string_funcitons();
+        subsequence_string();
 
         return 0;
     }
