@@ -1117,10 +1117,77 @@ using namespace std;
         cout << endl;
         
     }
+
+    void string_funcitons(){
+        int n, q;
+        string s;
+
+        cin >> n >> q >> s;
+
+        for (int i = 0; i < q; i++)
+        {
+            string query;
+
+            cin >> query;
+
+            if(query == "pop_back"){
+                s.pop_back();
+            }
+
+            if(query == "front"){
+                cout << s[0] << endl;
+            }
+
+            if(query == "back"){
+                cout << s[s.length()-1] << endl;
+            }
+
+            if(query == "sort"){
+                int l, r;
+                cin >> l >> r;
+                if(l > r) swap(l, r);
+                l--;
+                sort(s.begin() + l, s.begin() + r);
+            }
+
+            if(query == "reverse"){
+                int l, r;
+                cin >> l >> r;
+                if(l > r) swap(l, r);
+                l--;
+                reverse(s.begin() + l, s.begin() + r);
+            }
+
+            if(query == "print"){
+                int pos;
+                cin >> pos;
+                pos--;
+                cout << s[pos] << endl;
+            }
+            
+            if(query == "substr"){
+                int l, r, n;
+                cin >> l >> r;
+                if(l > r) swap(l, r);
+                l--;                
+                string sub_string = s.substr(l, abs(r-l));
+                cout << sub_string << endl;
+            }
+            
+            if(query == "push_back"){
+                char c;
+                cin >> c;
+                s.push_back(c);
+            }
+        }
+        
+
+
+    }
     
     int main(){
         
-        conversion();
+        string_funcitons();
 
         return 0;
     }
