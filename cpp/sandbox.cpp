@@ -1334,9 +1334,35 @@ using namespace std;
         cout << score << endl;
     }
 
+    void max_split(){
+        string s, res;
+
+        cin >> s;
+
+        int n = s.length();
+        int l=0, r=0, score=0;
+
+        for (int i = 0; s[i]; i++)
+        {
+            if(s[i] == 'L') l++;
+            if(s[i] == 'R') r++;
+
+            if(l == r && l > 0 && r > 0){
+                score++;
+                string sub = s.substr(i-((l+r)-1), (l+r));
+                res += "\n" + sub;
+                l=0;
+                r=0;
+            }
+        }
+        
+        cout << score;
+        cout << res << endl;
+    }
+
     int main(){
         
-        string_score();
+        max_split();
         
         return 0;
     }
