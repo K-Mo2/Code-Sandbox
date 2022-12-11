@@ -1389,9 +1389,33 @@ using namespace std;
         cout << endl;
     }
 
+    void new_words(){
+        string s;
+        int counter = 10000000, freq_arr[5] = { 0 };
+
+        cin >> s;
+
+        for (int i = 0; s[i]; i++)
+        {
+            if(tolower(s[i]) == 'e') freq_arr[0]++;
+            if(tolower(s[i]) == 'g') freq_arr[1]++;
+            if(tolower(s[i]) == 'y') freq_arr[2]++;
+            if(tolower(s[i]) == 'p') freq_arr[3]++;
+            if(tolower(s[i]) == 't') freq_arr[4]++;
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            if(freq_arr[i] < counter) counter = freq_arr[i];
+        }
+        
+        cout << counter << endl;    
+
+    }
+
     int main(){
         
-        url();
+        new_words();
         
         return 0;
     }
