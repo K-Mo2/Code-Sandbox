@@ -1359,9 +1359,39 @@ using namespace std;
         cout << res << endl;
     }
 
+    void url(){
+        string s;
+        bool start = false;
+
+        cin >> s;
+
+        for (int i = 0; s[i]; i++)
+        {
+            if(s[i] == '?'){
+                start = true;
+                continue;
+            }
+
+            if(s[i] == '&'){
+                cout << endl;
+                continue;
+            }
+
+            if(s[i] == '='){
+                cout << ": ";
+                continue;
+            }
+
+            if(start){
+                cout << s[i];
+            }
+        }
+        cout << endl;
+    }
+
     int main(){
         
-        max_split();
+        url();
         
         return 0;
     }
