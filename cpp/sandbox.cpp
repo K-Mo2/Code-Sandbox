@@ -1291,9 +1291,52 @@ using namespace std;
         cout << endl;
     }
 
+    void string_score(){
+        int n, score=0;
+        string s;
+
+        cin >> n >> s;
+
+        for (int i = 0; s[i]; i++)
+        {
+            if(s[i] == 'V'){
+                score += 5;
+            }
+            
+            if(s[i] == 'W'){
+                score += 2;
+            }
+            
+            if(s[i] == 'X'){
+                s[i+1] = ' ';
+            }
+            
+            if(s[i] == 'Y'){
+                s.push_back(s[i+1]);
+                s[i+1] = ' ';
+            }
+            
+            if(s[i] == 'Z'){
+                
+                if(s[i+1] == 'V'){
+                    score /= 5;
+                    s[i+1] = ' ';
+                }
+                
+                if(s[i+1] == 'W'){
+                    score /= 2;
+                    s[i+1] = ' ';
+                }
+
+                
+            }
+        }
+        cout << score << endl;
+    }
+
     int main(){
         
-        reverse_words();
+        string_score();
         
         return 0;
     }
