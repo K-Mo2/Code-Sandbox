@@ -1265,9 +1265,35 @@ using namespace std;
         
     }
 
+    void reverse_words(){
+        string s;
+
+        getline(cin, s);
+
+        int n = s.length();
+        int it = 0;
+        for (int i = 0; i < n; i++)
+        {
+             if(s[i] == ' '){
+                string sub = s.substr(it, i-it);
+                reverse(sub.begin(), sub.end());
+                cout << sub << " ";
+                it = i + 1;                
+            } 
+
+            if(i == (n - 1)){
+                string sub = s.substr(it, i-it+1);
+                reverse(sub.begin(), sub.end());
+                cout << sub;
+            }
+
+        }
+        cout << endl;
+    }
+
     int main(){
         
-        count_words();
-
+        reverse_words();
+        
         return 0;
     }
