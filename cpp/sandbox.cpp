@@ -1339,7 +1339,6 @@ using namespace std;
 
         cin >> s;
 
-        int n = s.length();
         int l=0, r=0, score=0;
 
         for (int i = 0; s[i]; i++)
