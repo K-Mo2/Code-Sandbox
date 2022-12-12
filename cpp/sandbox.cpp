@@ -1413,9 +1413,39 @@ using namespace std;
 
     }
 
+    void replace_word(){
+        string s, match = "EGYPT";
+        int k = 0;
+        int match_len = match.length();
+
+        cin >> s;
+
+        for (int i = 0; s[i]; i++)
+        {    
+            if(s[i] == 'E' && s[i+1] == 'G'){
+                
+                for (int j = i; j < i + 5; j++)
+                {   
+                    if(s[j] == match[k]) k++;        
+                }
+                
+                if(k > (match_len - 1)){
+                    
+                    s.replace(i, k, " ");
+                    k = 0;
+                
+                } else {
+                    k = 0;
+                }
+            }
+            
+        }
+        cout << s << endl;
+    }
+
     int main(){
         
-        new_words();
+        replace_word();
         
         return 0;
     }
