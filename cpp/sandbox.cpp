@@ -1482,9 +1482,44 @@ using namespace std;
 
     }
 
+    void comparison(){
+        string s, res = "", smallest = "";
+
+        cin >> s;
+
+        int n = s.length();
+
+        if(n == 1){
+            cout << s << endl;
+            return;
+        }
+
+        for (int i = 1; i < n; i++)
+        {
+            string sub1 = s.substr(0, i);
+            string sub2 = s.substr(i, n);
+
+            sort(sub1.begin(), sub1.end());
+            sort(sub2.begin(), sub2.end());
+
+            res = sub1 + sub2;
+
+            if(smallest == ""){
+                smallest = res;
+            }
+
+            if(smallest > res){
+                smallest = res;
+            }
+            // cout << sub1 << " " << sub2 << endl;
+        }
+        
+        cout << smallest << endl;
+    }
+
     int main(){
         
-        encrypt_decrypt();
-        
+        comparison();
+     
         return 0;
     }
