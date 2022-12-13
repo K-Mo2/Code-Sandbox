@@ -1443,9 +1443,48 @@ using namespace std;
         cout << s << endl;
     }
 
+    void encrypt_decrypt(){
+        
+        string original = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        string key = "PgEfTYaWGHjDAmxQqFLRpCJBownyUKZXkbvzIdshurMilNSVOtec#@_!=.+-*/";
+        
+        int q, n = key.length();
+        string s, res = "";
+
+        cin >> q >> s;
+        
+        if(q == 1){
+
+            for (int i = 0; s[i]; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if(s[i] == original[j]){
+                        res += key[j];
+                    }
+                }
+                
+            }
+        } else {
+
+            for (int i = 0; s[i]; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if(s[i] == key[j]){
+                        res += original[j];
+                    }
+                }
+                
+            }
+        }
+        cout << res << endl;    
+
+    }
+
     int main(){
         
-        replace_word();
+        encrypt_decrypt();
         
         return 0;
     }
