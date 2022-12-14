@@ -1517,9 +1517,25 @@ using namespace std;
         cout << smallest << endl;
     }
 
+    void use_getline(){
+        string s;
+
+        getline(cin, s);
+
+        for (int i = 0; s[i]; i++)
+        {
+            if(s[i] == '\\'){
+                break;
+            }
+            cout << s[i];
+        }
+
+        cout << endl;
+    }
+
     int main(){
         
-        comparison();
+        use_getline();
      
         return 0;
     }
