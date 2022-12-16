@@ -1533,9 +1533,23 @@ using namespace std;
         cout << endl;
     }
 
+    void count(){
+        string s;
+        long long sum = 0;
+
+        cin >> s;
+
+        for (int i = 0; s[i]; i++)
+        {
+            sum += ((int)(s[i]) - 48);
+        }
+
+        cout << sum << endl;
+    }
+
     int main(){
         
-        use_getline();
+        count();
      
         return 0;
     }
