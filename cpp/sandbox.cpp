@@ -1547,9 +1547,19 @@ using namespace std;
         cout << sum << endl;
     }
 
+    void compare(){
+        string x,y;
+        
+        cin >> x >> y;
+
+        x < y ? cout << x : cout << y;
+
+        cout  << endl;
+    }
+
     int main(){
         
-        count();
+        compare();
      
         return 0;
     }
