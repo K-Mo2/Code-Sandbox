@@ -1644,8 +1644,28 @@ using namespace std;
         cout << sum << endl;
     }
 
+    void min_max(){
+        int n, x, min=1000000, max=0;
+
+        cin >> n;
+
+        while(n){
+            
+            cin >> x;
+
+            if(x < min) min = x;
+            if(x > max) max = x;
+
+            n--;
+        }
+
+        cout << min << " " << max << endl;
+
+    }
+
     int main(){
                 
-        equation();
+        min_max();
+
         return 0;
     }
