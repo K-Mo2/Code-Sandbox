@@ -1663,9 +1663,29 @@ using namespace std;
 
     }
 
+    void n_times(){
+        int t, n;
+        char c;
+
+        cin >> t;
+        
+        while (t)
+        {
+            cin >> n >> c;
+
+            for (int i = 0; i < n; i++)
+            {
+                cout << c << " ";
+            }
+            cout << endl;
+            t--;
+        }
+        
+    }
+
     int main(){
                 
-        min_max();
+        n_times();
 
         return 0;
     }
