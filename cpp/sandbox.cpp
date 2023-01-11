@@ -1557,9 +1557,22 @@ using namespace std;
         cout  << endl;
     }
 
+    int add(){
+        int x, y;
+
+        cin >> x >> y;
+
+        return (x+y);
+    }
+
+    
+
+    bool isPalindromicBinary(){
+
+    }
+
     int main(){
-        
-        compare();
-     
+                
+        cout << add() << endl;
         return 0;
     }
