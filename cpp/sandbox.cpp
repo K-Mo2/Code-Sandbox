@@ -1628,8 +1628,24 @@ using namespace std;
         
     }
 
+    void equation(){
+        long long x, n, sum=0, acc;
+
+        cin >> x >> n;
+
+        for (long long i = 2; i <= n; i+=2)
+        {   acc = 1;
+            for (long long j = 1; j <= i; j++)
+            {
+                 acc *= x;
+            }
+            sum += acc;
+        }
+        cout << sum << endl;
+    }
+
     int main(){
                 
-        printIsPrime();
+        equation();
         return 0;
     }
