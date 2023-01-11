@@ -1565,14 +1565,43 @@ using namespace std;
         return (x+y);
     }
 
-    
+    string int_to_bin(unsigned int x){
+        string bin = "";
+        
+        while(x){
+            x % 2 == 0 ? bin.append("0") : bin.append("1");
+            x /= 2;
+        }
+        
+        return bin;
+    }
 
-    bool isPalindromicBinary(){
+    bool is_wonderful(){
+        unsigned int x;
 
+        cin >> x;
+
+        if(x % 2 == 0){
+            cout << "NO\n";
+            return false;
+        }
+        
+        string bin = int_to_bin(x);
+        unsigned int bin_len = bin.length();
+
+        for (int i = 0; i < bin_len / 2; i++)
+        {   
+            if(bin[i] != bin[(bin_len - 1) - i]){
+                cout << "NO\n";
+                return false;
+            }
+        }
+        cout << "YES\n";
+        return true;
     }
 
     int main(){
                 
-        cout << add() << endl;
+        is_wonderful();
         return 0;
     }
