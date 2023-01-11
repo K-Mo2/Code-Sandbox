@@ -1600,8 +1600,36 @@ using namespace std;
         return true;
     }
 
+
+    bool isPrimeNumber(long long n){
+        
+        if(n <= 1) return false;
+
+        for (long long i = 2; (i * i) <= n; i++)
+        {
+            if(n % i == 0) return false; 
+        }
+        return true;
+    }
+
+    void printIsPrime(){
+        int t, n;
+
+        cin >> t;
+
+        while (t)
+        {
+            cin >> n;
+
+            isPrimeNumber(n) ? cout << "YES\n" : cout << "NO\n";
+
+            t--;
+        }
+        
+    }
+
     int main(){
                 
-        is_wonderful();
+        printIsPrime();
         return 0;
     }
