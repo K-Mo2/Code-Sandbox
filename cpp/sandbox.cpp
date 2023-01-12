@@ -1743,9 +1743,45 @@ using namespace std;
         cout << fixed << setprecision(6) << median << endl;
     }
 
+    void shift_right(){
+        int n, x, it;
+
+        cin >> n >> x;
+        int a[n];
+        it = n;
+
+        for (int i = 0; i < n; i++)
+        {
+            cin >> a[i];
+        }
+
+        for (int i = 0; i < x; i++)
+        {
+            if(it == 0){
+                it = n-1;
+            } else {
+                it--;
+            }
+        } 
+        // cout << it << endl;
+        for (int i = it; i < n; i++)
+        {   
+            // cout << i << " ";
+            cout << a[i] << " ";
+        }
+
+        for (int i = 0; i < it; i++)
+        {
+            // cout << i << " ";
+            cout << a[i] << " ";
+        }
+
+        cout << endl;        
+    }
+
     int main(){
                 
-        average();
+        shift_right();
 
         return 0;
     }
