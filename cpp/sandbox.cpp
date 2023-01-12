@@ -1724,13 +1724,28 @@ using namespace std;
             }
             cout << endl;
         }
+    }
 
+    void average(){
+        long long n;
+        double sum=0, median;
+
+        cin >> n;
         
+        for(long long i=0; i < n; i++)
+        {
+            double x;
+            cin >> x;
+            sum += x;
+        }
+        
+        median = sum / n;
+        cout << fixed << setprecision(6) << median << endl;
     }
 
     int main(){
                 
-        swapping_with_matrix();
+        average();
 
         return 0;
     }
