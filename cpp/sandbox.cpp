@@ -1683,9 +1683,54 @@ using namespace std;
         
     }
 
+    void swapping_with_matrix(){
+        int n, x, y;
+        
+        cin >> n >> x >> y;
+        x--;
+        y--;
+
+        int arr[n][n];
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                cin >> arr[i][j];
+            }
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            int temp;
+            temp = arr[x][i];
+            arr[x][i] = arr[y][i];
+            arr[y][i] = temp;
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            int temp;
+            temp = arr[i][x];
+            arr[i][x] = arr[i][y];
+            arr[i][y] = temp;
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                cout << arr[i][j] << " ";
+            }
+            cout << endl;
+        }
+
+        
+    }
+
     int main(){
                 
-        n_times();
+        swapping_with_matrix();
 
         return 0;
     }
