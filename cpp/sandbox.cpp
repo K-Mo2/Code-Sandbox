@@ -1,14 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void distinct_nums(){
-    int n, counter=0;
+void shift_zeros(){
+    int n;
 
     cin >> n;
-    
     int arr[n];
-    int pos_freq_arr[1001] = { 0 };
-    int neg_freq_arr[1001] = { 0 };
 
     for (int i = 0; i < n; i++)
     {
@@ -17,33 +14,24 @@ void distinct_nums(){
 
     for (int i = 0; i < n; i++)
     {
-        // cout << arr[i] << " ";
-        if(arr[i] >= 0){
-            pos_freq_arr[arr[i]]++;
-        } else {
-            int temp = (arr[i] * -1);
-            neg_freq_arr[temp]++;
+        if(arr[i] != 0){
+            cout << arr[i] << " ";
         }
     }
     
-
-    for (int j = 0; j < 1001; j++)
-    {   
-        // cout << pos_freq_arr[j] << " " << neg_freq_arr[j] << endl;
-        if(pos_freq_arr[j] > 0) {
-            counter++;
-        }
-
-        if(neg_freq_arr[j] > 0) {
-            counter++;
+    for (int i = 0; i < n; i++)
+    {
+        if(arr[i] == 0){
+            cout << arr[i] << " ";
         }
     }
-    cout << counter << endl;
+
+    cout << endl;
 }
 
 int main(){
             
-    distinct_nums();
+    shift_zeros();
 
     return 0;
 }
