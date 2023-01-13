@@ -6,26 +6,35 @@ void shift_zeros(){
 
     cin >> n;
     int arr[n];
+    int new_arr[n];
 
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
 
+    int j = 0;
     for (int i = 0; i < n; i++)
     {
         if(arr[i] != 0){
-            cout << arr[i] << " ";
+            new_arr[j] = arr[i];
+            j++;
         }
     }
     
     for (int i = 0; i < n; i++)
     {
         if(arr[i] == 0){
-            cout << arr[i] << " ";
+            new_arr[j] = arr[i];
+            j++;
         }
     }
 
+    for (int i = 0; i < n; i++)
+    {
+        cout << new_arr[i] << " ";
+    }
+    
     cout << endl;
 }
 
