@@ -1,24 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
  
-bool isPalindrome(string s){
-    int len = s.length();
+string dec_to_bin(int n, string res=""){
 
-    if(len == 0 || len == 1){
-        return true;
-    }
-
-    if(s[0] == s[len - 1]){
-        return isPalindrome(s.substr(1, len - 2));
-    }
+    if(n == 0) return res;
     
-    return false;
+    res = to_string(n % 2) + res;
+
+    return dec_to_bin(n / 2, res);
 }
     
 int main(){
-    string s;
-    cin >> s;
-    // cout << isPalindrome(s) << endl;
-    isPalindrome(s) ? cout << "True\n" : cout << "False\n";
+
+    int n;
+    cin >> n;
+    cout << dec_to_bin(n) << endl;
     return 0;
 }
