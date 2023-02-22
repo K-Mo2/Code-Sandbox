@@ -1,19 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
  
-int print_to_n(int n, int i){
+int print_n_to_1(int n){
     
-    cout << i << endl;
+    (n == 1) ? cout << n : cout << n << " ";
     
-    if(i == n) return i;
+    if(n == 1) return n;
     
-    return print_to_n(n, i + 1);
+    return print_n_to_1(n - 1);
 }
     
 int main(){
 
-    int n, i = 1;
+    int n;
     cin >> n; 
-    print_to_n(n, i);
+    print_n_to_1(n);
+    // cout << endl;
     return 0;
 }
