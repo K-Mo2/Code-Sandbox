@@ -1,19 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
  
-string dec_to_bin(int n, string res=""){
-
-    if(n == 0) return res;
+int print_to_n(int n, int i){
     
-    res = to_string(n % 2) + res;
-
-    return dec_to_bin(n / 2, res);
+    cout << i << endl;
+    
+    if(i == n) return i;
+    
+    return print_to_n(n, i + 1);
 }
     
 int main(){
 
-    int n;
-    cin >> n;
-    cout << dec_to_bin(n) << endl;
+    int n, i = 1;
+    cin >> n; 
+    print_to_n(n, i);
     return 0;
 }
