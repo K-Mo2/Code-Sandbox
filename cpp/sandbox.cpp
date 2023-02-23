@@ -1,13 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void digits(string s, int i = 0){
+string digits(string s, int i = 0, string res = ""){
     
     int len = s.length();
-    i == (len - 1) ? cout << s[i] : cout << s[i] << " " ;
-    if(i >= (len - 1)) return;
     
-    return digits(s, i + 1);
+    if(i >= (len - 1)){
+        res.push_back(s[i]);
+    } else {
+
+     res.push_back(s[i]);
+     res.push_back(' ');
+    }
+    
+    if(i >= (len - 1)) return res;
+    
+    return res + digits(s, i + 1);
 }
 
 void recurrence(int n, int i = 0){
@@ -18,7 +26,7 @@ void recurrence(int n, int i = 0){
 
     cin >> s;
 
-    digits(s);
+    cout << digits(s);
     cout << endl;
     return recurrence(n, i + 1);
 } 
