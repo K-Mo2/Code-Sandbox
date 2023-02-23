@@ -1,20 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
-int print_n_to_1(int n){
+
+void digits(string s, int i = 0){
     
-    (n == 1) ? cout << n : cout << n << " ";
+    int len = s.length();
+    i == (len - 1) ? cout << s[i] : cout << s[i] << " " ;
+    if(i >= (len - 1)) return;
     
-    if(n == 1) return n;
-    
-    return print_n_to_1(n - 1);
+    return digits(s, i + 1);
 }
+
+void recurrence(int n, int i = 0){
+    
+    if(i >= n) return;
+    
+    string s;
+
+    cin >> s;
+
+    digits(s);
+    cout << endl;
+    return recurrence(n, i + 1);
+} 
+
     
 int main(){
 
     int n;
     cin >> n; 
-    print_n_to_1(n);
-    // cout << endl;
+    recurrence(n);
+    
     return 0;
 }
