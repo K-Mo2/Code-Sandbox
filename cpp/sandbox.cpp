@@ -1,26 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string dec_to_bin(int x, string res = ""){
+string even_indices(int arr[], string s2, int len, int i){
     
-    if(x <= 0){
-        return res;
+    if(i < 0){
+        return s2;
     }
-    res += to_string(x % 2);
-    return dec_to_bin(x / 2) + res;
+    if(i % 2 == 0){
+        cout << arr[i] << " ";
+    }
+    return even_indices(arr, s2, len, i - 1);
 }
 
-void recurrence(int n, int i = 0){
+int* recurrence(int n, int i, int arr[]){
     
-    if(i >= n) return;
 
-    int x;
-
-    cin >> x;
-
-    cout << dec_to_bin(x) << endl;
+    if(i >= n){
+        return arr;
+    }
     
-    return recurrence(n, i + 1);
+    cin >> arr[i];
+    
+    return recurrence(n, i + 1, arr);
 } 
 
     
@@ -28,6 +29,8 @@ int main(){
 
     int n;
     cin >> n; 
-    recurrence(n);
+    int arr[n];
+    int* res = recurrence(n, 0, arr);
+    cout << even_indices(res, "", n, n - 1) << endl;
     return 0;
 }
