@@ -1,33 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int digits(int x, int len){
+string dec_to_bin(int x, string res = ""){
     
-    int res = 0; 
-    
-    if(len - 1 <= 0){
-        return x;
-    } 
-    
-    res = x / int(pow(10, (len - 1)));
-    x %= int(pow(10, (len - 1)));
-    
-    cout << res << " ";
-
-    return digits(x , len - 1);
+    if(x <= 0){
+        return res;
+    }
+    res += to_string(x % 2);
+    return dec_to_bin(x / 2) + res;
 }
 
 void recurrence(int n, int i = 0){
     
     if(i >= n) return;
 
-    int x, len;
+    int x;
 
     cin >> x;
 
-    len = floor(log10(x) + 1);
-
-    cout << digits(x, len) << endl;
+    cout << dec_to_bin(x) << endl;
     
     return recurrence(n, i + 1);
 } 
