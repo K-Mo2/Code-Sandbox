@@ -1,33 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string digits(string s, int i = 0, string res = ""){
+int digits(int x, int len){
     
-    int len = s.length();
+    int res = 0; 
     
-    if(i >= (len - 1)){
-        res.push_back(s[i]);
-    } else {
+    if(len - 1 <= 0){
+        return x;
+    } 
+    
+    res = x / int(pow(10, (len - 1)));
+    x %= int(pow(10, (len - 1)));
+    
+    cout << res << " ";
 
-     res.push_back(s[i]);
-     res.push_back(' ');
-    }
-    
-    if(i >= (len - 1)) return res;
-    
-    return res + digits(s, i + 1);
+    return digits(x , len - 1);
 }
 
 void recurrence(int n, int i = 0){
     
     if(i >= n) return;
+
+    int x, len;
+
+    cin >> x;
+
+    len = floor(log10(x) + 1);
+
+    cout << digits(x, len) << endl;
     
-    string s;
-
-    cin >> s;
-
-    cout << digits(s);
-    cout << endl;
     return recurrence(n, i + 1);
 } 
 
@@ -37,6 +38,5 @@ int main(){
     int n;
     cin >> n; 
     recurrence(n);
-    
     return 0;
 }
