@@ -1,34 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int max_num(int arr[], int max, int len, int i){
-
-    if(i >= (len - 1)) return max;
-
-    if(arr[i] > max){
-        max = arr[i];
+int count_vowels(string s, int n, int len, int i = 0){
+    
+    if(i > (len - 1)){
+        return n;
     }
 
-    return max_num(arr, max, len, i + 1);
-}
-
-int* recur_input(int arr[], int len, int i){
+    char c = tolower(s[i]);
     
-    if(i >= len){
-        return arr;
+    if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'){
+        ++n;
     }
 
-    cin >> arr[i];
-
-    return recur_input(arr, len , i + 1);
+    return count_vowels(s, n, len, ++i);
 }
-    
+
 int main(){
 
-    int n;
-    cin >> n;
-    int arr[n]; 
-    int* res = recur_input(arr, n, 0);
-    cout << max_num(res, res[0], n, 0) << endl;
+    string s;
+    getline(cin, s);
+    int len = s.length();
+    cout << count_vowels(s, 0, len, 0) << endl;
     return 0;
 }
