@@ -1,26 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int count_vowels(string s, int n, int len, int i = 0){
+long long arr_input(long long arr[], long long sum, int len, int i){
     
     if(i > (len - 1)){
-        return n;
+        return sum;
     }
 
-    char c = tolower(s[i]);
+    cin >> arr[i];
     
-    if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'){
-        ++n;
-    }
+    sum += arr[i];
 
-    return count_vowels(s, n, len, ++i);
+    return arr_input(arr, sum, len, ++i);
 }
 
 int main(){
 
-    string s;
-    getline(cin, s);
-    int len = s.length();
-    cout << count_vowels(s, 0, len, 0) << endl;
+    int n;
+    cin >> n;
+    long long arr[n];
+    cout << arr_input(arr, 0, n, 0) << endl;
     return 0;
 }
