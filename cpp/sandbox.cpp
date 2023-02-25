@@ -1,18 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long long factorial(long long n){
-    if(n <= 1){
-        return n;
+int max_num(int arr[], int max, int len, int i){
+
+    if(i >= (len - 1)) return max;
+
+    if(arr[i] > max){
+        max = arr[i];
     }
 
-    return n * factorial(n - 1);
+    return max_num(arr, max, len, i + 1);
+}
+
+int* recur_input(int arr[], int len, int i){
+    
+    if(i >= len){
+        return arr;
+    }
+
+    cin >> arr[i];
+
+    return recur_input(arr, len , i + 1);
 }
     
 int main(){
 
-    long long n;
-    cin >> n; 
-    cout << factorial(n) << endl;
+    int n;
+    cin >> n;
+    int arr[n]; 
+    int* res = recur_input(arr, n, 0);
+    cout << max_num(res, res[0], n, 0) << endl;
     return 0;
 }
