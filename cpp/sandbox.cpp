@@ -1,24 +1,58 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long long arr_input(long long arr[], long long sum, int len, int i){
-    
-    if(i > (len - 1)){
-        return sum;
+using matrix = vector<vector<int>>;
+
+
+void matrices_sum(matrix &mat1, matrix &mat2, matrix &sum, int r, int c, int i, int j){
+    if(i == r){
+        return;
     }
 
-    cin >> arr[i];
+    if(j == c){
+        return matrices_sum(mat1, mat2, sum, r, c, i+1, 0);
+    }
     
-    sum += arr[i];
+    sum[i][j] = mat1[i][j] + mat2[i][j];
+    return matrices_sum(mat1, mat2, sum, r, c, i, j+1);
 
-    return arr_input(arr, sum, len, ++i);
 }
 
 int main(){
 
-    int n;
-    cin >> n;
-    long long arr[n];
-    cout << arr_input(arr, 0, n, 0) << endl;
+    int r, c;
+    cin >> r >> c;
+    matrix arr1(r, vector<int>(c));
+    matrix arr2(r, vector<int>(c));
+    matrix sum(r, vector<int>(c));
+    
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            cin >> arr1[i][j];
+        }
+    }
+    
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            cin >> arr2[i][j];
+        }
+    }
+    
+    matrices_sum(arr1, arr2, sum, r, c, 0, 0);
+    
+       
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            cout << sum[i][j] << " ";
+        }
+        cout << endl;
+    }
+ 
     return 0;
 }
