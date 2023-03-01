@@ -1,58 +1,47 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-using matrix = vector<vector<int>>;
+string num_to_money(string s){
+    int len = s.length();
 
-
-void matrices_sum(matrix &mat1, matrix &mat2, matrix &sum, int r, int c, int i, int j){
-    if(i == r){
-        return;
+    for (int i = len-1; i >= 0; i-=3)
+    {
+        if(i == len-1) continue;
+        s.insert(i+1,",");
     }
+    return s;
+}
 
-    if(j == c){
-        return matrices_sum(mat1, mat2, sum, r, c, i+1, 0);
+string num_to_money_recur(string s, int len, int i){    
+
+    if(i < 0){
+        return s;
     }
     
-    sum[i][j] = mat1[i][j] + mat2[i][j];
-    return matrices_sum(mat1, mat2, sum, r, c, i, j+1);
-
+    if(i < len - 1){
+        s.insert(i+1, ",");
+    }
+    return num_to_money_recur(s, len, i-3);
 }
 
 int main(){
-
-    int r, c;
-    cin >> r >> c;
-    matrix arr1(r, vector<int>(c));
-    matrix arr2(r, vector<int>(c));
-    matrix sum(r, vector<int>(c));
     
-    for (int i = 0; i < r; i++)
-    {
-        for (int j = 0; j < c; j++)
-        {
-            cin >> arr1[i][j];
-        }
-    }
-    
-    for (int i = 0; i < r; i++)
-    {
-        for (int j = 0; j < c; j++)
-        {
-            cin >> arr2[i][j];
-        }
-    }
-    
-    matrices_sum(arr1, arr2, sum, r, c, 0, 0);
-    
-       
-    for (int i = 0; i < r; i++)
-    {
-        for (int j = 0; j < c; j++)
-        {
-            cout << sum[i][j] << " ";
-        }
-        cout << endl;
-    }
+    double decimal;
  
+    cin >> decimal;
+ 
+    int integer =  decimal;
+    double fraction = (decimal - (double)(integer)); 
+    string s = to_string(integer);
+    int len = s.length();
+ 
+    string s1 = num_to_money(s);
+    s1 += to_string(fraction).substr(1);
+ 
+    string s2 = num_to_money_recur(s, len-1, len-1);
+    s2 += to_string(fraction).substr(1);
+
+    cout << s1 << endl << s2 << endl;
+
     return 0;
 }
