@@ -1,47 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
-string num_to_money(string s){
-    int len = s.length();
+int romanToInt(string s){
+    
+    int sum = 0;
+    int n = s.size();
 
-    for (int i = len-1; i >= 0; i-=3)
+    unordered_map<char, int> mp{
+        {'I',1},{'V',5},{'X',10},{'L',50},{'C',100},{'D',500},{'M',1000}
+    };
+
+    for (int i = 0; i < n; i++)
     {
-        if(i == len-1) continue;
-        s.insert(i+1,",");
-    }
-    return s;
-}
-
-string num_to_money_recur(string s, int len, int i){    
-
-    if(i < 0){
-        return s;
+        if(mp[s[i]] < mp[s[i+1]]) sum -= mp[s[i]];
+        
+        if(mp[s[i]] >= mp[s[i+1]]) sum += mp[s[i]];
     }
     
-    if(i < len - 1){
-        s.insert(i+1, ",");
-    }
-    return num_to_money_recur(s, len, i-3);
+    return sum;
 }
 
 int main(){
     
-    double decimal;
- 
-    cin >> decimal;
- 
-    int integer =  decimal;
-    double fraction = (decimal - (double)(integer)); 
-    string s = to_string(integer);
-    int len = s.length();
- 
-    string s1 = num_to_money(s);
-    s1 += to_string(fraction).substr(1);
- 
-    string s2 = num_to_money_recur(s, len-1, len-1);
-    s2 += to_string(fraction).substr(1);
+    string s;
+    cin >> s;
 
-    cout << s1 << endl << s2 << endl;
+    cout << romanToInt(s) << endl;
 
     return 0;
 }
