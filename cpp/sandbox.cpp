@@ -1,60 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isValid(string s){
-    
-    unordered_map<char, char> umap = {
-        {'(', ')'},
-        {'[', ']'},
-        {'{', '}'},
-    };
-    
-    stack<char> st;
-    int len = s.size();
-    
-    for (int i = 0; i < len; i++)
-    {
-        char c = s[i];
-
-        if(c == '(' || c == '[' || c == '{'){
-            
-            st.push(c);
-            
-        } else {
-            
-            if(st.empty()){
-            
-                return false;
-            
-            } else {
-                
-                char top = st.top();
-                
-                if(c == umap[top]){
-                    st.pop();
-                } else {
-                    return false;
-                }
-            }
-        }
-        
-    }
-    
-    
-    if (st.empty())
-    {
-        return true;
-    } 
-    
-    return false;
+double area(int a, int b, int c, int d){
+ double x = c * b;
+ double y = d * (a-c);
+ double z = ((a-c) * (b-d)) / 2.0;
+ double res = x + y + z;
+ return res;
 }
 
 int main(){
-    
-    string s;
-    
-    cin >> s;
-
-    isValid(s) ? cout << "true\n" : cout << "false\n";
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    cout << fixed << setprecision(6) << area(a, b, c, d) << endl;
     return 0;
 }
