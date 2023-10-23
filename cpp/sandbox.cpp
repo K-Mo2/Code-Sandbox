@@ -1,17 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-double area(int a, int b, int c, int d){
- double x = c * b;
- double y = d * (a-c);
- double z = ((a-c) * (b-d)) / 2.0;
- double res = x + y + z;
- return res;
+string guess_what(double n, double k, double a){
+    
+    double res = (n * k) / a; 
+    if(ceil(res) != floor(res)) return "double\n";
+
+   if(res > 2147483648 || res < -2147483648){
+    return "long long\n";
+   } else {
+    return "int\n";
+   }
 }
 
 int main(){
-    int a, b, c, d;
-    cin >> a >> b >> c >> d;
-    cout << fixed << setprecision(6) << area(a, b, c, d) << endl;
+    double n, k, a;
+    cin >> n >> k >> a;
+    cout << guess_what(n, k, a) << endl;
     return 0;
 }
